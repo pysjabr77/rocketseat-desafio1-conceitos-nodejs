@@ -1,0 +1,15 @@
+{
+  "name": "rocketseat-desafio1-conceitos-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pysjabr77/rocketseat-desafio1-conceitos-nodejs.git",
+  "author": "pedro <pedro.yoda@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
