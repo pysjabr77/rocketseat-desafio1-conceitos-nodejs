@@ -24,6 +24,7 @@ Se eu chamar a rota POST /projects repassando { id: 1, title: 'Novo projeto' } e
     tasks: ["Nova tarefa"]
   }
 ];
+
 Middlewares
 Crie um middleware que será utilizado em todas rotas que recebem o ID do projeto nos parâmetros da URL que verifica se o projeto com aquele ID existe. Se não existir retorne um erro, caso contrário permita a requisição continuar normalmente;
 
