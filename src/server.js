@@ -43,8 +43,34 @@ server.put("/projects/:id", (req, res) => {
   return res.json(projects);
 });
 
-server.delete("/projects", (req, res) => {});
+server.delete("/projects/:id", (req, res) => {
+  const { id } = req.params;
 
-server.post("/projects", (req, res) => {});
+  const index = projects.findIndex(item => {
+    return item.id == id;
+  });
+  if (index < 0)
+    return res.status(400).json({ error: `Project not found to id: ${id}` });
+
+  projects.splice(index, 1);
+
+  return res.json(projects);
+});
+
+server.post("/projects/:id/tasks", (req, res) => {
+  const { id } = req.params;
+
+  const index = projects.findIndex(item => {
+    return item.id == id;
+  });
+  if (index < 0)
+    return res.status(400).json({ error: `Project not found to id: ${id}` });
+
+  const { title } = req.body;
+
+  projects[index].tasks.push({ title });
+
+  return res.json(projects);
+});
 
 server.listen(3000);
